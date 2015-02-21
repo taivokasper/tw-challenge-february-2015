@@ -21,5 +21,10 @@ app.config(function($stateProvider, $urlRouterProvider, stripeProvider) {
             url: '/pay/:receiver/:accountNumber/:billNumber/:referenceNumber/:amount',
             templateUrl: 'views/pay.html',
             controller: 'PayCtrl'
-        });
+        })
+        .state('done', {
+            url: '/done',
+            templateUrl: 'views/done.html',
+            controller: 'DoneCtrl'
+        })
 });

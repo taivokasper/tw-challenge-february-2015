@@ -4,7 +4,7 @@ app.controller('IndexCtrl', function ($scope) {
 
 });
 
-app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams) {
+app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams, $state) {
 	$scope.data = {
 		receiver: $stateParams.receiver,
 		accountNumber: $stateParams.accountNumber,
@@ -21,6 +21,7 @@ app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams
 
     $scope.paymentDone = function () {
         console.log('Payment is done');
+        $state.go('done');
     };
 
     $scope.postPayment = function () {
@@ -43,4 +44,8 @@ app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams
             console.error('An error occurred!', err);
         });
     };
+});
+
+app.controller('DoneCtrl', function ($scope) {
+
 });
