@@ -115,3 +115,7 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Stripe test configuration
+grails.plugins.stripe.secretKey = sk_test_iQ1RBzwNTJSrzWxjSItu9xVr
+grails.plugins.stripe.publishableKey = pk_test_YBhgPZshRp7d8eZ1kb7SjxNT

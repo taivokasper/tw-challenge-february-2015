@@ -10,5 +10,9 @@ class UrlMappings {
         "/"(uri:"/index.html")
         "/users"(resources:'user')
         "500"(view:'/error')
+        "/pay" {
+            controller = "payment"
+            action = [POST: "pay"]
+        }
 	}
 }
