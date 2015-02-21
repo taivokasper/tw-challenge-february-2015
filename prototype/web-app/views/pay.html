@@ -1,12 +1,12 @@
 <section class="container 75%">
 	<section class="box">
 		<form name="paymentForm" ng-submit="postPayment()" class="css-form">
-			Receiver: <input type="text" ng-model="data.receiver" />
-			Account number: <input type="text" ng-model="data.accountNumber" />
-			Bill number: <input type="text" ng-model="data.billNumber" />
-			Reference number: <input type="text" ng-model="data.referenceNumber" />
+			Receiver: <input type="text" ng-disabled="disabled" ng-model="data.receiver" />
+			Account number: <input type="text" ng-disabled="disabled" ng-model="data.accountNumber" />
+			Bill number: <input type="text" ng-disabled="disabled" ng-model="data.billNumber" />
+			Reference number: <input type="text" ng-disabled="disabled" ng-model="data.referenceNumber" />
 
-			Amount: <input type="text" ng-model="data.amount" />
+			Amount: <input type="text" ng-disabled="disabled" ng-model="data.amount" />
 			Card Number: <input type="text" ng-model="data.cardNumber" />
 			Verification Code: <input type="text" ng-model="data.verificationCode" />
 			Expire Month: <input type="text" ng-model="data.expMonth" />

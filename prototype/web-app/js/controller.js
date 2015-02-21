@@ -17,6 +17,8 @@ app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams
         expYear : ''
 	};
 
+    $scope.disabled = true;
+
     $scope.paymentDone = function () {
         console.log('Payment is done');
     };
