@@ -16,5 +16,10 @@ app.config(function($stateProvider, $urlRouterProvider, stripeProvider) {
             url: '/pay',
             templateUrl: 'views/pay.html',
             controller: 'PayCtrl'
+        })
+        .state('filled', {
+            url: '/pay/:receiver/:accountNumber/:billNumber/:referenceNumber/:amount',
+            templateUrl: 'views/pay.html',
+            controller: 'PayCtrl'
         });
 });

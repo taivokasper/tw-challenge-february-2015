@@ -4,13 +4,13 @@ app.controller('IndexCtrl', function ($scope) {
 
 });
 
-app.controller('PayCtrl', function ($scope, stripe, PaymentService) {
+app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams) {
 	$scope.data = {
-		receiver: '',
-		accountNumber: '',
-		billNumber: '',
-		referenceNumber: '',
-        amount: '0.00',
+		receiver: $stateParams.receiver,
+		accountNumber: $stateParams.accountNumber,
+		billNumber: $stateParams.billNumber,
+		referenceNumber: $stateParams.referenceNumber,
+        amount: $stateParams.amount,
         cardNumber : '',
         verificationCode : '',
         expMonth : '',
