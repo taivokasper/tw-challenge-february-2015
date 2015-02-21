@@ -1,16 +1,11 @@
-<form method="post" action="" id="payment-form">
-	<label for="receiver">Receiver</label>
-	<input type="text" value="" id="receiver" />
+<div>
+	<form ng-submit="PostPayment" class="css-form">
+		Receiver: <input type="text" ng-model="data.receiver" />
+		Account number: <input type="text" ng-model="data.account_number" />
+		Bill number: <input type="text" ng-model="data.bill_number" />
+		Reference number: <input type="text" ng-model="data.reference_number" />
 
-	<label for="account_number">Account number</label>
-	<input type="text" value="" id="account_number" />
-
-	<label for="bill_number">Bill number</label>
-	<input type="text" value="" id="bill_number" />
-
-	<label for="reference_number">Reference number</label>
-	<input type="text" value="" id="reference_number" />
-
-	<label for="receiver">Receiver</label>
-	<input type="text" value="" id="receiver" />
-</form>
+		<button type="submit">Submit</button>
+		<button>Cancel</button>
+	</form>
+</div>
