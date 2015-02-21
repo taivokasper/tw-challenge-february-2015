@@ -1,19 +1,28 @@
 <section class="container 75%">
-	<section class="box">
-		<form name="paymentForm" ng-submit="postPayment()" class="css-form">
+	<form name="paymentForm" ng-submit="postPayment(paymentForm)" class="css-form">
+		<section class="box">
 			Receiver: <input type="text" ng-disabled="disabled" ng-model="data.receiver" />
 			Account number: <input type="text" ng-disabled="disabled" ng-model="data.accountNumber" />
 			Bill number: <input type="text" ng-disabled="disabled" ng-model="data.billNumber" />
 			Reference number: <input type="text" ng-disabled="disabled" ng-model="data.referenceNumber" />
-
 			Amount: <input type="text" ng-disabled="disabled" ng-model="data.amount" />
+		</section>
+		<section class="green box">
+			<h1>CREDIT CARD INFORMATION</h1>
 			Card Number: <input type="text" ng-model="data.cardNumber" />
-			Verification Code: <input type="text" ng-model="data.verificationCode" />
-			Expire Month: <input type="text" ng-model="data.expMonth" />
-			Expire Year: <input type="text" ng-model="data.expYear" />
 
-			<button class="button" type="submit">Submit</button>
-			<button class="button special">Cancel</button>
-		</form>
-	</section>
+			<div class="left">
+				Verification Code: <input type="text" ng-model="data.verificationCode" />
+			</div>
+			<div class="left">
+				Expire Month: <input type="text" ng-model="data.expMonth" />
+			</div>
+			<div class="left">
+				Expire Year: <input type="text" ng-model="data.expYear" />
+			</div>
+			<div class="form-buttons">
+				<button type="submit">PAY</button>
+			</div>
+		</section>
+	</form>
 </section>
