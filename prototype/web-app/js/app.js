@@ -9,5 +9,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'views/index.html',
             controller: 'IndexCtrl'
+        })
+        .state('pay', {
+            url: '/pay',
+            templateUrl: 'views/pay.html',
+            controller: 'PayCtrl'
         });
 });
