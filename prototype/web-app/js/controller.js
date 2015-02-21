@@ -11,10 +11,10 @@ app.controller('PayCtrl', function ($scope, stripe, PaymentService, $stateParams
 		billNumber: $stateParams.billNumber,
 		referenceNumber: $stateParams.referenceNumber,
         amount: $stateParams.amount,
-        cardNumber : '',
-        verificationCode : '',
-        expMonth : '',
-        expYear : ''
+        cardNumber : '4242424242424242',
+        verificationCode : '424',
+        expMonth : '02',
+        expYear : '16'
 	};
 
     $scope.disabled = true;
