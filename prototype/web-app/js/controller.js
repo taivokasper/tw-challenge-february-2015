@@ -7,9 +7,9 @@ app.controller('IndexCtrl', function ($scope) {
 app.controller('PayCtrl', function ($scope, stripe, PaymentService) {
 	$scope.data = {
 		receiver: '',
-		account_number: '',
-		bill_number: '',
-		reference_number: '',
+		accountNumber: '',
+		billNumber: '',
+		referenceNumber: '',
         amount: '0.00',
         cardNumber : '',
         verificationCode : '',
