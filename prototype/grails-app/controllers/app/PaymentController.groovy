@@ -1,28 +1,29 @@
 package app
 
 import com.stripe.model.Charge
+import grails.converters.JSON
 
 class PaymentController {
 
     def index() { }
 
-    def pay(String stripeToken, Double amount) {
-        def amountInCents = (amount * 100) as Integer
+    def pay() {
+        def data = new PaymentData(request.JSON)
+        def amountInCents = (data.getAmount() * 100) as Integer
 
         def chargeParams = [
             'amount': amountInCents,
             'currency': 'eur',
-            'card': stripeToken,
-            'description': 'customer@sample.org'
+            'card': data.getStripeToken(),
+            'description': data.getDescription()
         ]
 
-//        def status
         try {
-            Charge.create(chargeParams)
-//            status = 'Your purchase was successful.'
-            response.status = 200;
+            Charge.create(chargeParams, 'sk_test_iQ1RBzwNTJSrzWxjSItu9xVr')
+            log.info('Payment is done')
+            render data as JSON
         } catch(CardException) {
-//            status = 'There was an error processing your credit card.'
+            log.error('Something went wrong!')
             response.status = 500;
         }
     }

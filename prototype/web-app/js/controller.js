@@ -21,15 +21,19 @@ app.controller('PayCtrl', function ($scope, stripe, PaymentService) {
         console.log('Payment is done');
     };
 
-    $scope.postPayment = function (formData) {
-        stripe.card.createToken({
+    $scope.postPayment = function () {
+        var formData = $scope.data;
+
+        var createTokenData = {
             number: formData.cardNumber,
             cvc: formData.verificationCode,
             exp_month: formData.expMonth,
             exp_year: formData.expYear
-        })
+        };
+        console.log('Create token data:', createTokenData);
+        stripe.card.createToken(createTokenData)
         .then(function (token) {
-            PaymentService.pay(token, formData.amount, $scope.paymentDone, function () {
+            PaymentService.pay(token.id, formData.amount, $scope.paymentDone, function () {
                 console.error('Something went wrong when submitting the amount!');
             })
         })
