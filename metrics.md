@@ -9,4 +9,4 @@
 5. How many people who have opened their invoice and reach out to customer service?
 
 Our key performance indicator:
-How many people opened the invoice in our service -> How many of them finished the transaction -> How days before the deadline.
+How many people opened the invoice in our service -> How many of them finished the transaction -> How many days before the deadline these people paid.
