@@ -1,6 +1,8 @@
-var app = angular.module('app', ['ngResource', 'ui.router']);
+var app = angular.module('app', ['ngResource', 'ui.router', 'angular-stripe']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, stripeProvider) {
+
+    stripeProvider.setPublishableKey('pk_test_YBhgPZshRp7d8eZ1kb7SjxNT');
 
     $urlRouterProvider.otherwise('/');
 
